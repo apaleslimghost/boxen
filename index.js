@@ -113,7 +113,7 @@ const makeContentText = (text, padding, columns, align) => {
 	if (textWidth > max) {
 		const newLines = [];
 		for (const line of lines) {
-			const createdLines = wrapAnsi(line, max, {hard: true});
+			const createdLines = wrapAnsi(line, max, {hard: true, trim: false});
 			const alignedLines = ansiAlign(createdLines, {align});
 			const alignedLinesArray = alignedLines.split('\n');
 			const longestLength = Math.max(...alignedLinesArray.map(s => stringWidth(s)));
